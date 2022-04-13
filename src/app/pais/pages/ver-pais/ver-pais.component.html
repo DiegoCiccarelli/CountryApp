@@ -1,0 +1,9 @@
+<div class="alert alert-info" *ngIf="!pais else divPais">
+    Espere por favor ...
+</div>
+
+<ng-template #divPais>
+    {{pais | json}}
+
+
+</ng-template>
