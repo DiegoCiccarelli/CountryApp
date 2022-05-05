@@ -1,0 +1,9 @@
+.btn-seleccionado{
+    background-color: rgb(202, 138, 54);
+    color: white;
+}
+
+.btn-no-seleccionado{
+    background-color: bisque;
+    color: black;
+}

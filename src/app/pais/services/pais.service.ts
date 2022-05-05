@@ -21,9 +21,14 @@ export class PaisService {
   }
 
   buscarPaisPorAlpha(id: string): Observable<Country> {
-  // console.log("en servicio " + id)
+  
     const url = `${this.apiUrl}/alpha/${id}`;
-  //  console.log(url)
+  
     return this.http.get<Country>(url);
+  }
+
+  buscarRegion( region : string): Observable<Country[]>{
+    const url = `${this.apiUrl}/region/${region}` 
+    return this.http.get<Country[]>(url)
   }
 }
