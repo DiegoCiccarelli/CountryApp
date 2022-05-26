@@ -24,7 +24,7 @@ export class PorPaisComponent implements OnInit {
     .subscribe((resp) => {
       
       this.paises=resp
-      console.log(this.paises)
+     // console.log(this.paises)
     }
 
       , (error)=>{

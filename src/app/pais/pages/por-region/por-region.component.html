@@ -1,3 +1,4 @@
+<div class="animate__animated animate__fadeIn animate__faster">
 <h3>Paises por regiones <small> {{regionActiva | titlecase }}</small></h3>
 <hr>
 <h5>Seleccione una región</h5>
@@ -14,5 +15,5 @@
     'btn-seleccionado' : region === regionActiva,
     'btn-no-seleccionado' : region !== regionActiva
 }" -->
-
+</div>
 <app-pais-tabla [paises]="paises" ></app-pais-tabla>
