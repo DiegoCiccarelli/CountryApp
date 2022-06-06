@@ -1,9 +1,89 @@
-<div class="alert alert-info" *ngIf="!pais else divPais">
-    Espere por favor ...
+<div class="alert alert-info" *ngIf="!pais; else divPais">
+  Espere por favor ...
 </div>
 
 <ng-template #divPais>
-    {{pais | json}}
+  <div class="row">
+    <div class="col">
+      <h1>{{ pais.name.common }}</h1>
+      <hr />
+      <img class="" [src]="pais.flags.png" alt="" />
 
+      <h2>Capital: {{ pais.capital }}</h2>
+      <h2>Población: {{ pais.population | number }}</h2>
+    </div>
+  </div>
 
+  <div class="row">
+    <div class="col">
+      <hr />
+      <h3>Traducciones</h3>
+      <span class="badge bg-primary mr-1 traduccion">
+        {{ pais.translations.ara.common }}
+      </span>
+      <span class="badge bg-primary mr-1 traduccion">
+        {{ pais.translations.ces.common }}
+      </span>
+      <span class="badge bg-primary mr-1 traduccion">
+        {{ pais.translations.cym.common }}
+      </span>
+      <span class="badge bg-primary mr-1 traduccion">
+        {{ pais.translations.deu.common }}
+      </span>
+      <span class="badge bg-primary mr-1 traduccion">
+        {{ pais.translations.est.common }}
+      </span>
+      <span class="badge bg-primary mr-1 traduccion">
+        {{ pais.translations.fin.common }}
+      </span>
+      <span class="badge bg-primary mr-1 traduccion">
+        {{ pais.translations.fra.common }}
+      </span>
+      <span class="badge bg-primary mr-1 traduccion">
+        {{ pais.translations.hrv.common }}
+      </span>
+      <span class="badge bg-primary mr-1 traduccion">
+        {{ pais.translations.jpn.common }}
+      </span>
+      <span class="badge bg-primary mr-1 traduccion">
+        {{ pais.translations.ita.common }}
+      </span>
+      <span class="badge bg-primary mr-1 traduccion">
+        {{ pais.translations.hun.common }}
+      </span>
+      <span class="badge bg-primary mr-1 traduccion">
+        {{ pais.translations.kor.common }}
+      </span>
+      <span class="badge bg-primary mr-1 traduccion">
+        {{ pais.translations.nld.common }}
+      </span>
+      <span class="badge bg-primary mr-1 traduccion">
+        {{ pais.translations.per.common }}
+      </span>
+      <span class="badge bg-primary mr-1 traduccion">
+        {{ pais.translations.por.common }}
+      </span>
+      <span class="badge bg-primary mr-1 traduccion">
+        {{ pais.translations.pol.common }}
+      </span>
+      <span class="badge bg-primary mr-1 traduccion">
+        {{ pais.translations.slk.common }}
+      </span>
+      <span class="badge bg-primary mr-1 traduccion">
+        {{ pais.translations.spa.common }}
+      </span>
+      <span class="badge bg-primary mr-1 traduccion">
+        {{ pais.translations.swe.common }}
+      </span>
+      <span class="badge bg-primary mr-1 traduccion">
+        {{ pais.translations.urd.common }}
+      </span>
+      <span class="badge bg-primary mr-1 traduccion">
+        {{ pais.translations.zho.common }}
+      </span>
+      <span class="badge bg-primary mr-1 traduccion">
+        {{ pais.translations.rus.common }}
+      </span>
+    </div>
+  </div>
 </ng-template>

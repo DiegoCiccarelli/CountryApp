@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { switchMap, tap } from 'rxjs/operators';
 import { PaisService } from '../../services/pais.service';
 import { Country } from '../../interfaces/pais.interface';
-import { ɵangular_packages_platform_browser_dynamic_platform_browser_dynamic_a } from '@angular/platform-browser-dynamic';
+
 
 @Component({
   selector: 'app-ver-pais',
@@ -13,6 +13,7 @@ import { ɵangular_packages_platform_browser_dynamic_platform_browser_dynamic_a 
 export class VerPaisComponent implements OnInit {
 
   public pais!: Country
+  
   
 
   constructor( 
@@ -25,12 +26,16 @@ export class VerPaisComponent implements OnInit {
 
     this.activateRoute.params
     .pipe(
-      switchMap(params =>  this.paisService.buscarPaisPorAlpha(params.id) )
+      switchMap(({id}) =>  this.paisService.buscarPaisPorAlpha(id) )
     )
-    .subscribe(pais => this.pais = pais)
+    .subscribe(pais => this.pais=pais[0])
+    
+  
     
     
 
   }
+
+  
 
 }

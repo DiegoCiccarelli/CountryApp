@@ -9,6 +9,20 @@
         placeholder="Buscar Pais..."
       >
       </app-pais-input>
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-action" *ngFor="let sugerencia of paisesSugeridos">
+          <a [routerLink]="['/pais', sugerencia.cca2]">{{sugerencia.name.common}}</a>
+          
+        </li>
+        <li class="list-group-item list-group-item-action" 
+          style="color: blue"
+          (click) = "buscarSugerido(termino)"
+          *ngIf="termino">
+          Buscar "{{termino}}"
+          
+        </li>
+
+      </ul>
       <div class="alert alert-danger" *ngIf="hayError">
         No se encontró ningún pais con el término {{ " " + termino }}
       </div>
